@@ -1,0 +1,23 @@
+.thumb {
+    border-radius: 50% 50% 50% 0 !important;
+    height: 30px !important;
+    width: 30px !important;
+    margin-left: -15px !important;
+    top: -20px !important;
+    left: 50%;
+}
+
+input[type=range]+.thumb .value {
+    color: #fff;
+    margin-left: -1px;
+    margin-top: 8px;
+    font-size: 10px;
+}
+
+body {
+    background-color: lightgray !important;
+}
+
+input[type=range] {
+    pointer-events: none;
+}
