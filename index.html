@@ -15,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="windowOnload();">
     <div class="card m-4">
         <div class="card-body">
             <div class="container">
@@ -23,24 +23,36 @@
                     <div class="col-10">
                         <div class="d-flex justify-content-center my-4">
                             <span class="font-weight-bold purple-text mr-2 mt-1">0</span>
-                            <input class="border-0 w-100" type="range" min="0" max="120" value="0" id="top_slider" />
+
+                            <input class="border-0 w-100" type="range" min="0" max="120" value="0" id="top_slider"
+                                onchange="handleSliderChange(event);" list="top_slider_datalist" />
+                            <datalist id="top_slider_datalist">
+
+                            </datalist>
                             <span class="font-weight-bold purple-text ml-2 mt-1">120</span>
                         </div>
                     </div>
                     <div class="col-2">
-                        <input type="number" id="top_slider_input" class="form-control mt-3" value="0" min="0" max="120" onchange="handleValChange(event, 'top_slider')">
+                        <input type="number" id="top_slider_input" class="form-control mt-3" value="0" min="0" max="120"
+                            onchange="handleValChange(event, 'top_slider')">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-10">
                         <div class="d-flex justify-content-center my-4">
                             <span class="font-weight-bold purple-text mr-2 mt-1">0</span>
-                            <input class="border-0 w-100" type="range" min="0" max="120" step="10" value="0" id="bottom_slider" />
+                            <input class="border-0 w-100" type="range" min="0" max="120" step="10" value="0"
+                                id="bottom_slider" onchange="handleSliderChange(event);"
+                                list="bottom_slider_datalist" />
+                            <datalist id="bottom_slider_datalist">
+
+                            </datalist>
                             <span class="font-weight-bold purple-text ml-2 mt-1">120</span>
                         </div>
                     </div>
                     <div class="col-2">
-                        <input type="number" id="bottom_slider_input" class="form-control mt-3" value="0" min="0" max="120" step="10" onchange="handleValChange(event,'bottom_slider')">
+                        <input type="number" id="bottom_slider_input" class="form-control mt-3" value="0" min="0"
+                            max="120" step="10" onchange="handleValChange(event,'bottom_slider')">
                     </div>
                 </div>
             </div>
@@ -55,11 +67,14 @@
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,20 @@
+function windowOnload() {
+
+    var slider_options = [];
+    // var bottom_slider_options = [];
+    for (let i = 0; i <= 120; i++) {
+        
+        if (i % 10 == 0) {
+            // bottom_slider_options.push('<option value="'+ i +'">'+ i +'</option>');
+            slider_options.push('<option value="'+ i +'">'+ i +'</option>');
+        }
+    }
+
+    $('#top_slider_datalist').html(slider_options.join(''));
+    $('#bottom_slider_datalist').html(slider_options.join(''));
+
+}
+
 function handleValChange(e, slider_name) {
     let val = e.target.value;
 
@@ -7,15 +24,19 @@ function handleValChange(e, slider_name) {
         val = 120
 
     if (slider_name == "bottom_slider") {
-        let reminader = val % 10;
-        if (reminader != 0)
-            val -= reminader;
+        let reminder = val % 10;
+        if (reminder != 0)
+            val -= reminder;
     }
 
     if (val != e.target.value)
         e.target.value = val;
 
     $('#' + slider_name).val(val);
+}
+
+function handleSliderChange(e) {
+    $(`#${e.target.id}_input`).val(e.target.value);
 }
 
 function handleSaveClick() {
